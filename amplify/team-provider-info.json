@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fruitapi-staging-155220-authRole",
+      "UnauthRoleArn": "arn:aws:iam::294153288174:role/amplify-fruitapi-staging-155220-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::294153288174:role/amplify-fruitapi-staging-155220-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-fruitapi-staging-155220-deployment",
+      "UnauthRoleName": "amplify-fruitapi-staging-155220-unauthRole",
+      "StackName": "amplify-fruitapi-staging-155220",
+      "StackId": "arn:aws:cloudformation:us-east-2:294153288174:stack/amplify-fruitapi-staging-155220/2d2c67f0-5546-11ed-86ea-024e97862748",
+      "AmplifyAppId": "d2wpc5gsscwiiy"
+    },
+    "categories": {
+      "auth": {
+        "fruitapi": {}
+      }
+    }
+  }
+}
