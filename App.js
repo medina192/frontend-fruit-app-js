@@ -25,61 +25,25 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Amplify } from 'aws-amplify';
-import config from "./src/aws-exports";
-import { withAuthenticator } from 'aws-amplify-react-native';
-Amplify.configure({
-  ...config,
-  Analytics: {
-    disabled: true,
-  },
-});
+import AppRoutes from './src/router/AppRoutes';
+import LoginScreen from './src/screens/LoginScreen';
+import { store } from './src/redux/store';
+import { Provider } from 'react-redux'
+
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <Provider store={ store }>
+      <AppRoutes />
+    </Provider>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+
 });
 
-export default withAuthenticator(App)
+//export default withAuthenticator(App)
+export default App;
+
